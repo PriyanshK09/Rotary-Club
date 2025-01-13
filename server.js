@@ -11,7 +11,7 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/club', {
+mongoose.connect('mongodb+srv://priyanshkhare0908:pkdk1234@yash.tvvrz.mongodb.net/?retryWrites=true&w=majority&appName=Yash', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

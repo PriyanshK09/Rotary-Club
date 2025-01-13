@@ -18,7 +18,7 @@ const AdminPanelPage = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/images/${selectedGallery}`);
+      const response = await axios.get(`https://rotary-club-d7m0.onrender.com/api/images/${selectedGallery}`);
       setImages(response.data);
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -37,7 +37,7 @@ const AdminPanelPage = () => {
     formData.append('gallery', selectedGallery);
 
     try {
-      await axios.post('http://localhost:5000/api/upload', formData);
+      await axios.post('https://rotary-club-d7m0.onrender.com/api/upload', formData);
       setSelectedFile(null);
       fetchImages();
     } catch (error) {
@@ -47,7 +47,7 @@ const AdminPanelPage = () => {
 
   const handleDelete = async (imageId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/images/${imageId}`);
+      await axios.delete(`https://rotary-club-d7m0.onrender.com/api/images/${imageId}`);
       fetchImages();
     } catch (error) {
       console.error('Error deleting image:', error);
@@ -151,7 +151,7 @@ const AdminPanelPage = () => {
             <div key={image._id} className="relative group">
               <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 shadow-md">
                 <img
-                  src={`http://localhost:5000${image.path}`}
+                  src={`https://rotary-club-d7m0.onrender.com${image.path}`}
                   alt={image.filename}
                   className="object-cover w-full h-full"
                 />

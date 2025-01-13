@@ -10,7 +10,7 @@ const RedCrossGalleryPage = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/images/redcross');
+      const response = await axios.get('https://rotary-club-d7m0.onrender.com/api/images/redcross');
       setImages(response.data);
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -25,7 +25,7 @@ const RedCrossGalleryPage = () => {
           <div key={image._id} className="relative group">
             <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 shadow-md transition duration-300 ease-in-out transform hover:scale-105">
               <img
-                src={`http://localhost:5000${image.path}`}
+                src={`https://rotary-club-d7m0.onrender.com${image.path}`}
                 alt={image.filename}
                 className="object-cover w-full h-full"
               />
